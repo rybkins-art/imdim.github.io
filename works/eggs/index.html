@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Omelet</title>
+    <meta content="" name="author">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!--Main project style-->
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="icon" href="favicon.png">
+  </head>
+  <body id="body">
+    <!--Popup Crack Egg-->
+    <div class="popup-dialog-wrapper popup-crack" id="popup-crack">
+      <div class="popup-dialog">
+        <div class="poster"></div>
+        <div class="text">Покликайте по яйцу, чтобы разбить его</div>
+        <div class="button close_dialog" onclick="bn_dialogClose(this);">Хорошо</div>
+      </div>
+    </div>
+    <!--Popup Cleaning Egg-->
+    <div class="popup-dialog-wrapper popup-cleaning" id="popup-cleaning">
+      <div class="popup-dialog">
+        <div class="poster"></div>
+        <div class="text">Теперь перетащите слайдер, чтобы очистить яйцо</div>
+        <div class="button close_dialog" onclick="bn_dialogClose(this);">Хорошо</div>
+      </div>
+    </div>
+    <!--Header section-->
+    <header class="section header_section bg-white-gradient" id="header">
+      <div class="container">
+        <div class="top_menu__wrap">
+          <div class="logo">
+            <div class="icon"></div>
+            <div class="title omelet_tm">Omelet</div>
+          </div>
+          <div class="top_menu__container">
+            <nav class="top_menu"><a class="top_menu__item" href="#header" onclick="goSection('#header', this)">About</a><a class="top_menu__item" href="#design" onclick="goSection('#design', this)">Features</a><a class="top_menu__item" href="#healthy" onclick="goSection('#healthy', this)">Nutrition</a><a class="top_menu__item top_menu__item-active" href="#order" onclick="goSection('#order', this)">By it now</a></nav>
+            <div class="top_menu__trigger"><span></span></div>
+          </div>
+        </div>
+        <div class="center_block">
+          <h1 class="section_title"><i>"</i> Sweet, Nutritious and Delicious<i>"</i></h1>
+          <h2 class="section_desc">The key to happiness is hidden in the <b class="omelet_tm">Omelet</b></h2>
+        </div>
+        <div class="egg_container">
+          <div class="egg"></div>
+        </div>
+      </div>
+    </header>
+    <!--Shape section-->
+    <section class="section design_section" id="design">
+      <div class="container">
+        <div class="section_title">Various colours</div>
+        <div class="section_desc">
+          <b class="omelet_tm">Omelet</b> provides a choice of three design options, which are unique.<br/>
+          Each design has been worked with love.
+        </div>
+        <div class="row egg_colors">
+          <div class="col-md-3 egg_color__variant silk_white" animation-when-scrolling="true">
+            <div class="egg_color__variant__title">Silk White</div>
+            <div class="egg egg_color__variant__image"></div>
+          </div>
+          <div class="col-md-3 egg_color__variant elegant_brown" animation-when-scrolling="true">
+            <div class="egg_color__variant__title">Elegant brown</div>
+            <div class="egg egg_color__variant__image"></div>
+          </div>
+          <div class="col-md-3 egg_color__variant dazzling_gold" animation-when-scrolling="true">
+            <div class="egg_color__variant__title">Glamorous gold</div>
+            <div class="egg egg_color__variant__image"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Healthy section-->
+    <section class="section healthy_section bg-white-gradient" id="healthy">
+      <div class="section_before healthy_before"></div>
+      <div class="section_after healthy_after"></div>
+      <div class="container">
+        <div class="section_title">Is <b class="omelet_tm">Omelet</b> healthy? Yes it is!</div>
+        <div class="section_desc">
+          One egg contains 15% of the daily protein norm<br/>
+          The egg contains not a few microelements necessary for human life.
+          <div class="row justify-content-md-center healthy_wrapper" animation-when-scrolling="true">
+            <div class="col-md-4 healthy_list healthy_list_left">
+              <div class="healthy_item">
+                <div class="point"></div>
+                <div class="line"></div>
+                <div class="healthy_item__benefit">
+                  <div class="number">157</div>
+                  <div class="text">calories</div>
+                </div>
+              </div>
+              <div class="healthy_item">
+                <div class="point"></div>
+                <div class="line"></div>
+                <div class="healthy_item__benefit">
+                  <div class="number">12g</div>
+                  <div class="text">proteins</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 half_egg"></div>
+            <div class="col-md-4 healthy_list">
+              <div class="healthy_item">
+                <div class="point"></div>
+                <div class="line"></div>
+                <div class="healthy_item__benefit">
+                  <div class="number">55mg</div>
+                  <div class="text">calcium</div>
+                </div>
+              </div>
+              <div class="healthy_item">
+                <div class="point"></div>
+                <div class="line"></div>
+                <div class="healthy_item__benefit">
+                  <div class="number">12mg</div>
+                  <div class="text">magnesium</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section cleaning_section bg-white-gradient" id="cleaning">
+      <div class="section_before cleaning_before"></div>
+      <div class="section_after cleaning_after"></div>
+      <div class="container">
+        <div class="section_title">Compact and easy to use</div>
+        <div class="section_desc">
+          <b class="omelet_tm">Omelet</b> seriously approached the implementation of the functional eggs<br/>
+          We have worked every detail in our product.
+        </div>
+        <div class="cleaning_wrapper">
+          <div class="compare cleaning_egg" id="cleaning_egg" animation-when-scrolling="true" call-back="showCleaningInstr">
+            <div class="egg_compare compare_before egg_before" id="whole_egg">
+              <div class="egg_cleaning__layer" onclick="break_an_egg(this, event);"></div>
+            </div>
+            <div class="egg_compare compare_after egg_after"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section reviews_section" id="reviews">
+      <div class="container">
+        <div class="section_title">100% Customer satisfaction!</div>
+        <div class="reviews_wrap">
+          <div class="rev_arrows prev_rev_arrow" onclick="leafRev('prev')"></div>
+          <div class="rev_arrows next_rev_arrow" onclick="leafRev('next')"></div>
+          <div class="reviews__item reviews__item_prev"><img class="reviews__item__avatar" src="assets/img/businessman.jpg">
+            <div class="reviews__item__text">"My business needs a quality product. The design of the eggs is elaborated with great care, attention is paid to every detail. We will continue to buy this product. In the eggs of the future of mankind!"</div>
+            <div class="reviews__item_author"><b class="name">Hancock.</b> businessman</div>
+          </div>
+          <div class="reviews__item reviews__item-active"><img class="reviews__item__avatar" src="assets/img/avatar.jpg">
+            <div class="reviews__item__text">"I was skeptic at first, but when i tried the Egg for the first time, my life has completely changed! I'm a better person now. Everything is better with the Eggs."</div>
+            <div class="reviews__item_author"><b class="name">Dmitriy Rybkin.</b> single mom</div>
+          </div>
+          <div class="reviews__item reviews__item_next"><img class="reviews__item__avatar" src="assets/img/peeeter.png">
+            <div class="reviews__item__text">"Lois is constantly angry when I throw eggs in the Meg. But it's sooooo much fun"</div>
+            <div class="reviews__item_author"><b class="name">Peter Griffin.</b> unemployed</div>
+          </div>
+          <div class="reviews__item"><img class="reviews__item__avatar" src="assets/img/businessman.jpg">
+            <div class="reviews__item__text">"My business needs a quality product. The design of the eggs is elaborated with great care, attention is paid to every detail. We will continue to buy this product. In the eggs of the future of mankind!"</div>
+            <div class="reviews__item_author"><b class="name">Hancock.</b> businessman</div>
+          </div>
+          <div class="reviews__item"><img class="reviews__item__avatar" src="assets/img/avatar.jpg">
+            <div class="reviews__item__text">"I was skeptic at first, but when i tried the Egg for the first time, my life has completely changed! I'm a better person now. Everything is better with the Eggs."</div>
+            <div class="reviews__item_author"><b class="name">Dmitriy Rybkin.</b> single mom</div>
+          </div>
+          <div class="reviews__item"><img class="reviews__item__avatar" src="assets/img/peeeter.png">
+            <div class="reviews__item__text">"Lois is constantly angry when I throw eggs in the Meg. But it's sooooo much fun"</div>
+            <div class="reviews__item_author"><b class="name">Peter Griffin.</b> unemployed</div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews_bottom"></div>
+    </section>
+    <section class="section order_section" id="order">
+      <div class="container">
+        <div class="section_title">Order one (or more) today!</div>
+        <div class="tariff_wrap">
+          <div class="tariff tariff-lite">
+            <div class="tarif_name"><b class="omelet_tm">Omelet</b> Lite</div>
+            <ul class="advantages">
+              <li class="advantages__item">Small and compact</li>
+              <li class="advantages__item">Highly portable</li>
+              <li class="advantages__item">Unapologetically delicious</li>
+            </ul>
+            <div class="tariff_bottom">
+              <div class="order_button">Order</div>
+              <div class="price">starting at $9.99</div>
+              <div class="image"></div>
+            </div>
+          </div>
+          <div class="tariff tariff-pro">
+            <div class="tarif_name"><b class="omelet_tm">Omelet</b> Pro</div>
+            <ul class="advantages">
+              <li class="advantages__item">Highly portable</li>
+              <li class="advantages__item">Easily sliceable</li>
+              <li class="advantages__item">Unapologetically delicious</li>
+              <li class="advantages__item">Very nutritious</li>
+            </ul>
+            <div class="tariff_bottom">
+              <div class="order_button">Order</div>
+              <div class="price">starting at $9.99</div>
+              <div class="image"></div>
+            </div>
+          </div>
+          <div class="tariff tariff-team">
+            <div class="tarif_name"><b class="omelet_tm">Omelet</b> Team</div>
+            <ul class="advantages">
+              <li class="advantages__item">Ideal for bigger groups</li>
+              <li class="advantages__item">Easily sliceable</li>
+              <li class="advantages__item">Unapologetically delicios</li>
+              <li class="advantages__item">Very nutritious</li>
+            </ul>
+            <div class="tariff_bottom">
+              <div class="order_button">Order</div>
+              <div class="price">starting at $9.99</div>
+              <div class="image"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container footer__container">
+        <div class="row">
+          <div class="col-md-5 footer__info">
+            Since you came here to read this, have one <i class="egg_icon">hello</i> for free! <br/>
+            Copyright 2017 <b class="omelet_tm">Omelet</b> All rights reserved.
+          </div>
+          <nav class="col-md-7 footer__menu"><a class="footer__menu__item" href="#">About</a><a class="footer__menu__item" href="#">History</a><a class="footer__menu__item" href="#">Contact us</a><a class="footer__menu__item" href="#">Free eggs</a></nav>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" id="__bs_script__">
+      //<![CDATA[
+      document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=3.10.10'><\/script>".replace("HOST", location.hostname));
+      //]]>
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>
