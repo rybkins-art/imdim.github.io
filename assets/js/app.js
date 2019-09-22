@@ -2804,15 +2804,59 @@ $( document ).ready(function() {
 
   });
 
+  function getNavIndex($this) {
+    curActive = $this.parent().find('.is-active'),
+    curPos = $this.parent().children().index(curActive),
+    nextPos = $this.parent().children().index($this),
+    lastItem = $this.parent().children().length - 1;
+
+    return [
+        curActive,
+        curPos,
+        nextPos,
+        lastItem
+    ]
+  }
+
+  $(function() {
+      let hash = window.location.hash;
+
+      if (hash) {
+          hash = hash.replace(/^#/ig, '');
+          let $itemMenu = $('[data-content-id="'+hash+'"]');
+
+          if ($itemMenu.length) {
+            let navIndex = getNavIndex($itemMenu);
+
+            let [
+               curActive,
+               curPos,
+               nextPos,
+               lastItem
+            ] = navIndex;
+
+            
+       
+             updateNavs(nextPos);
+             updateContent(curPos, nextPos, lastItem);
+          }
+      }
+  });
+
   $('.side-nav li, .outer-nav li').click(function(){
 
     if (!($(this).hasClass('is-active'))) {
 
-      var $this = $(this),
-          curActive = $this.parent().find('.is-active'),
-          curPos = $this.parent().children().index(curActive),
-          nextPos = $this.parent().children().index($this),
-          lastItem = $(this).parent().children().length - 1;
+      let navIndex = getNavIndex($(this));
+
+     let [
+        curActive,
+        curPos,
+        nextPos,
+        lastItem
+     ] = navIndex;
+
+     console.info(navIndex);
 
       updateNavs(nextPos);
       updateContent(curPos, nextPos, lastItem);
@@ -2890,8 +2934,15 @@ $( document ).ready(function() {
   function updateNavs(nextPos) {
 
     $('.side-nav, .outer-nav').children().removeClass('is-active');
-    $('.side-nav').children().eq(nextPos).addClass('is-active');
+    let $sideNavNext = $('.side-nav').children().eq(nextPos);
+    $sideNavNext.addClass('is-active');
     $('.outer-nav').children().eq(nextPos).addClass('is-active');
+
+    let hash = $sideNavNext.data('content-id');
+
+    if (hash) {
+        window.location.hash = hash;
+    }
 
   }
 
