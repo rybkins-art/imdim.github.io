@@ -701,14 +701,19 @@ body {
       display: none; } }
 
 @media (max-width: 600px) and (max-height: 750px) {
+  .intro {
+    justify-content: flex-start;
+  }
   .intro--banner {
-    height: auto; }
+    height: 280px; }
+    .intro--logo { height: 330px; }
+    /* 
     .intro--banner::before, .intro--banner::after {
       display: none; }
     .intro--banner h1 {
       margin-top: 0; }
   .intro--options {
-    display: none; } }
+    display: none; } */ }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .intro--logo {
