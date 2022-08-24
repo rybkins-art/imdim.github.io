@@ -871,7 +871,12 @@ body {
           -ms-transform: none;
               transform: none;
       left: 50%;
-      margin-left: -125px; } }
+      margin-left: -125px; 
+     }
+
+     .work--lockup .slider--item-center .slider--item-description {
+        width: 250px;
+    }}
 
 .about {
   position: relative;
